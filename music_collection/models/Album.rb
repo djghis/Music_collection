@@ -54,8 +54,8 @@ class Album
   end
 
   def self.find(id)
-    sql = "SELECT * FROM albums WHERE artist_id = $1"
-    values = [album_id]
+    sql = "SELECT * FROM albums WHERE id = $1"
+    values = [id]
     result = SqlRunner.run(sql, values)
     album_hash = result.first
     album = Album.new(album_hash)
